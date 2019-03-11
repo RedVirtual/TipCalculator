@@ -6,9 +6,48 @@
 
     <StackLayout>
         <!-- Place new controls here -->
+       <!--
         <Label Text="TipCalculator in Xamarin.Forms" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        -->
+        <TableView Intent="Form">
+            <TableSection Title="Datos">
+                <EntryCell x:Name="txtTotal"
+                           Label="Total"
+                           Placeholder="0.0€"/>
+                <EntryCell x:Name="txtPropina"
+                           Label="Propina (%)"/>
+                <EntryCell x:Name="txtNoPersonas"
+                           Label="# de personas"/>
+            </TableSection>
+            <TableSection>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout>
+                            <Button x:Name="btnCalcular"
+                                    Text="Calcular"
+                                    Clicked="BtnCalcular_Clicked"></Button>
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </TableSection>
+            <TableSection Title="Resultado">
+                <TextCell x:Name="lblPropina"
+                          Text="Propina: "
+                          Detail="0.0€"></TextCell>
+                <TextCell x:Name="lblTotal"
+                          Text="Total con propina: "   
+                          Detail="0.0€"></TextCell>
+                <TextCell x:Name="lblPropinaPorPersona"
+                          Text="Propina por persona: "
+                          Detail="0.0€"></TextCell>
+                <TextCell x:Name="lblTotalPorPersona"
+                          Text="Total por persona: "   
+                          Detail="0.0€"></TextCell>
+            </TableSection>
+        </TableView>
+        
     </StackLayout>
 
 </ContentPage>
